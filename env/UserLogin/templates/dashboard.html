@@ -1,0 +1,24 @@
+<!-- accounts/templates/accounts/home.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    {% if is_authenticated %}
+        <h2>Welcome Home, {{ user.username }}!</h2>
+        <ul>
+            <li>hmoe</li>
+            <li><a href="{% url 'movies' %}">movies</a></li>
+            <li>top10 movies</li>
+            <li>aboutus</li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+        <h2>Welcome, Guest!</h2>
+        <a href="{% url 'login' %}">Login</a> | <a href="{% url 'register' %}">Register</a>
+    {% endif %}
+    
+</body>
+</html>
